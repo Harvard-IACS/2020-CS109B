@@ -44,7 +44,8 @@ class GenerateStructure:
                         "Slug: " + slug + str(i) + '\n' +
                         "Tags: ADD TAGS HERE" +
                         '\n\n\n' + "## Slides"  + '\n' +
-                        "<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->")
+                        # if this line is uncommented it makes `iacs publish` barf
+                        "#<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->")
 
     # Create Lectures folders
     def create_lectures(self, directory, number_of_hw, folders):
