@@ -161,13 +161,14 @@ Your final score for the course will be computed using the following weights:
 
 <span style="color:red">**Non-DCE Students**</span>
 
-| Assignment                     | Final Grade Weight |
-|--------------------------------|--------------------|
-| Paired Homework (6)            | 45%                |
-| Individual Homework (2)        | 25 %               |
-| Quizzes                        | 10%                |
-| Project                        | 20%                |
-| **Total**                      | **100%**           |
+| Assignment              | Final Grade Weight |
+|-------------------------|--------------------|
+| Paired Homework (6)     | 48%                |
+| Individual Homework (2) | 22 %               |
+| Quizzes                 | 8%                 |
+| Project                 | 20%                |
+| Participation           | 2%                 |
+| **Total**               | **100%**           |
 
 **Note:** Regular homework (for everyone) counts as 5 points. 209b extra homework counts as 1 point.
 </br>
@@ -176,9 +177,10 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 48%                |
-| Individual Homework (2) | 28%                |
-| Project                 | 24%                |
+| Paired Homework (6)     | 52%                |
+| Individual Homework (2) | 24%                |
+| Project                 | 22%                |
+| Participation           | 2%                |
 | **Total**               | **100%**           |
 
 </br>
