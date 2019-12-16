@@ -163,9 +163,10 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 48%                |
-| Individual Homework (2) | 22 %               |
+| Paired Homework (6)     | 46%                |
+| Individual Homework (2) | 20%               |
 | Quizzes                 | 8%                 |
+| Ed Exercises            | 4%                 |
 | Project                 | 20%                |
 | Participation           | 2%                 |
 | **Total**               | **100%**           |
@@ -177,10 +178,11 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 52%                |
-| Individual Homework (2) | 24%                |
+| Paired Homework (6)     | 50%                |
+| Individual Homework (2) | 22%                |
+| Ed Exercises            | 4%                |
 | Project                 | 22%                |
-| Participation           | 2%                |
+| Participation           | 2%                 |
 | **Total**               | **100%**           |
 
 </br>
