@@ -14,9 +14,9 @@ CS 109b, AC 209b, Stat 121b, or CSCI E-109b
 **Lab Leaders:** Chris Tanner & Eleni Kaxiras
 
 
-**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103 (tentative)
-**Labs:** Monday 4:30-6:00pm in Pierce Hall 301 (tentative)
-**Advanced Sections:** Time & Location TBD
+**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103
+**Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)
+**Advanced Sections:** Wed 4:30-5:45pm Location TBD
 **Office Hours:** TBD
 
 **Prerequisites:** CS 109a, AC 209a, Stat 121a, or CSCI E-109a or the equivalent.
@@ -57,13 +57,12 @@ The programming language will be Python.
 ### Tentative Course Topics <a name='course-topics'></a>
 
 * Smoothing and Additive Models
-* AWS
 * Unsupervised Learning, Clustering
-* Bayesian Inference Models, LDA
+* Bayesian Modeling
 * Convolutional Neural Networks
 * Autoencoders
 * Recurrent Neural Networks
-* NLP
+* NLP / Text Analysis
 * Variational AutoEncoders & Generative Models
 * Generative Adversarial Networks
 * (Deep) Reinforcement Learning
