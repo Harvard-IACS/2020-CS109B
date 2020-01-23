@@ -1,7 +1,6 @@
-Title: CS109B
-Slug: index
+Title: Syllabus
+Slug: syllabus
 Date: 2019-11-25
-save_as: index.html
 
 ## Advanced Topics in Data Science (Spring 2020)
 CS 109b, AC 209b, Stat 121b, or CSCI E-109b

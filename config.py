@@ -11,7 +11,7 @@ COLOR = '#8996A0'
 MENUITEMS = [
     ('Syllabus', 'pages/syllabus.html'),
     #('Calendars', 'pages/calendars.html'),
-    #('Schedule', 'pages/schedule.html'),
+    ('Schedule', 'pages/schedule.html'),
     #('Materials', 'pages/materials.html'),
     #('Videos', 'pages/videos.html'),
     #('Projects', 'pages/projects.html'),
