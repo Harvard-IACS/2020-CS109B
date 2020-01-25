@@ -1,0 +1,14 @@
+name: mc3
+channels:
+  - conda-forge
+  - conda
+dependencies:
+  - python
+  - pymc3
+  - mkl-service
+  - jupyter
+  - matplotlib
+  - pandas
+  - arviz
+  - statsmodels
+  - seaborn
