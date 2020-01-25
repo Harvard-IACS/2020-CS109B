@@ -8,6 +8,8 @@ channels:
 - defaults
 
 dependencies:
+- pymc3
+- mkl-service
 - altair
 - arviz
 - bokeh
