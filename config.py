@@ -12,7 +12,7 @@ MENUITEMS = [
     ('Syllabus', 'pages/syllabus.html'),
     ('Calendars', 'pages/calendars.html'),
     ('Schedule', 'pages/schedule.html'),
-    #('Materials', 'pages/materials.html'),
+    ('Materials', 'pages/materials.html'),
     #('Videos', 'pages/videos.html'),
     #('Projects', 'pages/projects.html'),
     #('FAQ', 'pages/faq.html'),
