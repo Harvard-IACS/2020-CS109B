@@ -16,7 +16,7 @@ MENUITEMS = [
     #('Videos', 'pages/videos.html'),
     #('Projects', 'pages/projects.html'),
     #('FAQ', 'pages/faq.html'),
-    #('Resources', 'pages/resources.html')
+    ('Resources', 'pages/resources.html')
 
 #    ('Sections', 'category/sections.html')
 ]
