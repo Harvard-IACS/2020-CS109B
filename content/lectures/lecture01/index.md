@@ -1,4 +1,4 @@
-Title: Lecture 01:
+Title: Lecture 1: Introduction + Smoothing and Additive 1/3
 Category: lectures
 Date: 2020-01-27
 Author: Mark Glickman
