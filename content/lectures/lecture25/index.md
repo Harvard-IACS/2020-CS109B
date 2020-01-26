@@ -1,9 +1,9 @@
 Title: Lecture 25:
 Category: lectures
-Date: 2020-01-24
+Date: 2021-01-24
 Author: 
 Slug: lecture25
-Tags: ADD TAGS HERE
+Tags:
 
 
 ## Slides

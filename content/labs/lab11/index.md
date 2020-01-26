@@ -1,9 +1,9 @@
 Title: Lab 11:
 Category: labs
-Date: 2020-01-24
+Date: 2021-01-24
 Author: 
 Slug: lab11
-Tags: ADD TAGS HERE
+Tags:
 
 
 ## Slides
