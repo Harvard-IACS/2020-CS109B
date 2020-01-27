@@ -3,7 +3,7 @@ Slug: index
 Date: 2019-11-25
 save_as: index.html
 
-Spring 2020 <br/>
+Spring 2020 <br/><br/>
 [Pavlos Protopapas](mailto:pavlos@seas.harvard.edu), [Mark Glickman](mailto:glickman@fas.harvard.edu), & [Chris Tanner](mailto:christanner@seas.harvard.edu)
 <hr>
 **Lab Leaders:** Chris Tanner & Eleni Kaxiras
