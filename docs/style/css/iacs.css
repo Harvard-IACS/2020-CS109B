@@ -130,7 +130,13 @@ table thead {
 }
 
 /* Custom */
-.container {
+#content.container {
+    max-width: 75rem;
+}
+nav div.container, div.container.title, .container.syllabus, .container.materials, .container.resources, .container.index {
+    max-width: 50rem;
+}
+div.container.title {
     max-width: 50rem;
 }
 a {
