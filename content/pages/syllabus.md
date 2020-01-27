@@ -118,7 +118,7 @@ All course materials, including lecture notes, lab notes, and section notes will
 Assignments will only be posted on Canvas.
 
 #### Working Environment
-You will be working in Jupyter Notebooks which you can run in your own machine or in the SEAS JupyterHub cloud (details on this to come).
+You will be working in Jupyter Notebooks which you can run in your own machine or in the SEAS <a href="https://canvas.harvard.edu/courses/65462/external_tools/60899?display=borderless">JupyterHub</a> cloud (see <a href="https://harvard-iacs.github.io/2020-CS109B/labs/lab01/">lab 1</a> for details).
 
 #### Recommended Textbooks <a name="recommended-textbooks"></a>
 
