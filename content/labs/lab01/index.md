@@ -9,14 +9,9 @@ Tags: Virtual Environments, Anaconda, JupyterHub
 ## Notebooks
 - [Lab 1: Getting Started]({filename}notebook/cs109b_lab1_intro.ipynb)
 
-## YAML File
-This YAML file can be used to create a local Conda environment
+### Additional Files
 
-- [cs109b.yml](https://github.com/Harvard-IACS/2020-CS109B/blob/master/docs/labs/lab01/cs109b.yml)
-
-## Forking a Repo
-A guide to repo forking
-
-- [Forking a Repo](https://github.com/Harvard-IACS/2020-CS109B/blob/master/docs/labs/lab01/ForkRepo.pdf)
+- [YAML file](https://github.com/Harvard-IACS/2020-CS109B/raw/master/docs/labs/lab01/cs109b.yml) to create local Conda environment
+- [Forking a Repo Guide](https://github.com/Harvard-IACS/2020-CS109B/raw/master/docs/labs/lab01/ForkRepo.pdf)
 
 
