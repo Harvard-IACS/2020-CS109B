@@ -72,6 +72,8 @@ Upon successful completion of this course, you should feel comfortable with the 
 
 ### Course Components <a name='course-components'></a>
 There will be live video feed available only to continuing education students for lectures, labs, and advanced sections. Recordings for all other students will be available within 24 hrs.
+<br/>
+Video streams and recordings can be accessed from the <a href="https://canvas.harvard.edu/courses/65462/external_tools/61068">Videos</a> section on Canvas.
 
 #### Lectures <a name='lectures'></a>
 The class meets twice a week for lectures. Attending lectures is a crucial component of learning the material presented in this course.
