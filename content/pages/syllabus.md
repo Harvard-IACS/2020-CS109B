@@ -114,7 +114,10 @@ There will be eight graded homework assignments. Some of them will be due one we
 
 ### Course Resources <a name='course-resources'></a>
 #### Online Materials <a name='online-materials'></a>
-All course materials, including lecture notes, lab notes, and section notes will be published in the class GitHub (available soon).
+All course materials, including lecture notes, lab notes, and section notes will be published on the <a href="https://github.com/Harvard-IACS/2020-CS109B/tree/master/content">course GitHub repo</a> as well as the public site's <a href="https://harvard-iacs.github.io/2020-CS109B/pages/materials.html">Materials section</a>.
+<br/>
+**Note:** Lecture xontent for weeks 1-3 is only available to registered students through the Materals section.
+<br/>
 Assignments will only be posted on Canvas.
 
 #### Working Environment
