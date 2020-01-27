@@ -130,6 +130,9 @@ table thead {
 }
 
 /* Custom */
+.container {
+    max-width: 50rem;
+}
 a {
     color: #6666ff;
 }
