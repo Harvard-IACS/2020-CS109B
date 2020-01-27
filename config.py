@@ -6,7 +6,7 @@ SITEURL = 'https://harvard-iacs.github.io/2020-CS109B'
 
 GITHUB = 'https://github.com/Harvard-IACS/2020-CS109B'
 
-COLOR = '#8996A0'
+COLOR = '#6666ff'
 
 MENUITEMS = [
     ('Syllabus', 'pages/syllabus.html'),

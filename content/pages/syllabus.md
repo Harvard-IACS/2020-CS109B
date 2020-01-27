@@ -13,9 +13,9 @@ CS 109b, AC 209b, Stat 121b, or CSCI E-109b
 **Lab Leaders:** Chris Tanner & Eleni Kaxiras
 
 
-**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103
-**Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)
-**Advanced Sections:** Wed 4:30-5:45pm Location TBD
+**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103<br/><br/>
+**Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)<br/>
+**Advanced Sections:** Wed 4:30-5:45pm Location TBD<br/>
 **Office Hours:** TBD
 
 **Prerequisites:** CS 109a, AC 209a, Stat 121a, or CSCI E-109a or the equivalent.
@@ -73,10 +73,6 @@ Upon successful completion of this course, you should feel comfortable with the 
 ### Course Components <a name='course-components'></a>
 There will be live video feed available only to continuing education students for lectures, labs, and advanced sections. Recordings for all other students will be available within 24 hrs.
 
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
-
 #### Lectures <a name='lectures'></a>
 The class meets twice a week for lectures. Attending lectures is a crucial component of learning the material presented in this course.
 
@@ -93,13 +89,13 @@ At the end of each lecture, we will ask you to take a short, graded quiz on the 
 #### Advanced Sections <a name='advanced-sections'></a>
 The course will include advanced sections for 209b students and will cover a different topic per week. &nbsp;These are 75 min lectures and they will cover advanced topics like the mathematical underpinnings of the methods seen in lecture and lab and extensions of those methods. &nbsp;The material covered in the advanced sections is </span><strong>required </strong> for all AC209b students. Tentative topics are:
 
-* Earth <span>Mover's Distance
+* Earth Mover's Distance
 * Dropout
 * ConvNets: LeNet, AlexNet, VGG-15, ResNet and Inception
 * LSTM, GRU in NLP
 * Neural style transfer learning
 * Deep Reinforcement Learning
-* Variational Inference</span><br /><br />
+* Variational Inference
 
 #### Exams <a name='exams'></a>
 There are no exams in this course.
@@ -143,14 +139,6 @@ For questions about homework, course content, package installation, the process 
 * <strong>watch</strong> for official announcements via Canvas so make sure you have your Canvas notifications turned on. Ed should always be your first resource for seeking answers to your content questions.
 * <strong>send an email to the Helpline</strong>&nbsp; cs109b2020@gmail.com for administrative issues, regrade requests, and non-content specific questions.
 *  <strong>for personal matters</strong> that you do not feel comfortable sharing with the TFs, you may send an email to either or both of the instructors.
-
-<br>
-
-**(syllabus continued on next page)**
-
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
 
 ### Course Policies and Expectations <a name='course-policies-and-expectations'></a>
 
