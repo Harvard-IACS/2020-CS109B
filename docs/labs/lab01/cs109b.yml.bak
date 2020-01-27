@@ -8,6 +8,8 @@ channels:
 - defaults
 
 dependencies:
+- pymc3
+- mkl-service
 - altair
 - arviz
 - bokeh
@@ -31,7 +33,6 @@ dependencies:
 - plotly
 # students will install this from repo
 # - pyESN
-- pymc3
 - python>=3.6
 - requests
 - scipy
