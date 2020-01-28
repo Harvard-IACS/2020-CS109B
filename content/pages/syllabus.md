@@ -13,7 +13,7 @@ CS 109b, AC 209b, Stat 121b, or CSCI E-109b
 **Lab Leaders:** Chris Tanner & Eleni Kaxiras
 
 
-**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103<br/><br/>
+**Lectures:** Mon and Wed 1:30‐2:45pm in NW B103<br/>
 **Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)<br/>
 **Advanced Sections:** Wed 4:30-5:45pm Location TBD<br/>
 **Office Hours:** TBD
