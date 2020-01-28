@@ -9,6 +9,7 @@ Tags: Smoothing, Splines
 ## Slides
 This lecture is only available to registered students
 
+- [Introduction [PPTX]]({static}presentation/intro-lecture_109b_2020.pptx)
 - [Lecture 1-3 Slides [PDF]](https://canvas.harvard.edu/files/9243849/download?download_frd=1)
 
 ## Notebooks
