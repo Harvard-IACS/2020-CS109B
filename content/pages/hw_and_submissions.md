@@ -24,13 +24,13 @@ pre {
 }
 </style>
 
-##### *V. September 25, 2019*
+##### *V. Jan 29, 2020*
 
 ## General Policies
 
 ### Colaboration
 
-Except for **HW4** and **HW7** which will be done by each student **individually**, you're allowed and **encouraged** to work with **a fellow student** on the homework. This does not mean that you are to divide and conquer. In the spirit of learning and getting the most out of this course and out of collaborating with your peer, you should solve each problem on your own, compare with your partner, and decide on a
+Except for **HW2** and **HW6** which will be done by each student **individually**, you're allowed and **encouraged** to work with **a fellow student** on the homework. This does not mean that you are to divide and conquer. In the spirit of learning and getting the most out of this course and out of collaborating with your peer, you should solve each problem on your own, compare with your partner, and decide on a
 common solution.
 
 ### Importing Libraries
@@ -44,7 +44,7 @@ seaborn.
 
 Extensions are provided only for medical reasons with a doctor's note.
 
-If there are issues, send an email to the **Helpline**.
+If there are issues, send an email to the course email: [cs190b2020@gmail.com](mailto:cs109b2020@gmail.com).
 
 Homework assignments will be done in Python in the Jupyter Notebook environment. When you are finished editing your notebook, **re-run all the cells to make sure they work**.
 
