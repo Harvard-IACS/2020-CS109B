@@ -5,7 +5,7 @@ Date: 2020-01-29
 
 |Week|Lecture (Mon)|Lecture (Weds)|Lab (Mon)|Advanced Section (Weds)|Assignment (R:Released Weds - D:Due Thurs)|
 |-----|-----|-----|-----|-----|-----|
-|1|[Lecture 1: Introduction + Smoothers and Additive 1/3]({filename}/lectures/lecture01/index.md)|Lecture 2: Smoother and Additive 2/3|[Lab 1: Getting Started]({filename}/labs/lab01/index.md)||HW1 - R: 1/29 D: 2/6|
+|1|[Lecture 1: Introduction + Smoothers and Additive 1/3]({filename}/lectures/lecture01/index.md)|[Lecture 2: Smoother and Additive 2/3]({filename}/lectures/lecture02/index.md)|[Lab 1: Getting Started]({filename}/labs/lab01/index.md)||HW1 - R: 1/29 D: 2/6|
 |2|Lecture 3: Smoother and GAM 3/3 |Lecture 4: Unsupervised learning/clustering 1|Lab 2: Smoothers+GAM ||HW2 - R: 2/5 D: 2/20|
 |3|Lecture 5: Unsupervised learning/clustering 2|Lecture 6: Bayesian 1/3|Lab 3: Clustering||No New Assignment|
 |4|No Lecture (Presidents' Day)|Lecture 7: Bayesian 2/3|No Lab (President's Day)||HW3 - R: 2/19 D: 3/5|
