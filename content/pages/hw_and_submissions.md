@@ -44,7 +44,7 @@ seaborn.
 
 Extensions are provided only for medical reasons with a doctor's note.
 
-If there are issues, send an email to the course email: [cs190b2020@gmail.com](mailto:cs109b2020@gmail.com).
+If there are issues, send an email to the course email: [cs109b2020@gmail.com](mailto:cs109b2020@gmail.com).
 
 Homework assignments will be done in Python in the Jupyter Notebook environment. When you are finished editing your notebook, **re-run all the cells to make sure they work**.
 
