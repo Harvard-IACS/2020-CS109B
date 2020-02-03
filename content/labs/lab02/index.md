@@ -1,9 +1,10 @@
-Title: Lab 02:
+Title: Lab 2: Smoothers & GAMs
 Category: labs
-Date: 2021-01-24
-Author: 
+Date: 2020-02-03
+Author: Eleni Kaxiras
 Slug: lab02
-Tags:
+Tags: Smoothers, GAMs
 
+## Notebooks
+- [Lab 2: Smooths & GAMs]({filename}notebook/cs109b_lab2_smooths_and_GAMs.ipynb)
 
-## Slides
