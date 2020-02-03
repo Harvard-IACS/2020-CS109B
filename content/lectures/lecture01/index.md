@@ -3,7 +3,7 @@ Category: lectures
 Date: 2020-01-27
 Author: Mark Glickman
 Slug: lecture01
-Tags: Smoothing, Splines
+Tags: Smoothers, Splines
 
 
 ## Slides
