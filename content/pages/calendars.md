@@ -25,8 +25,5 @@ pre {
 </style>
 
 
-Our calendar is being updated with OH times at the moment. Please check back shortly.
-<!--
 Select full calendar or weekly schedule tab from the spreadsheet below.
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXLRSYHq2Fqv1ItLRnw1c_nfyP6kQDk3flAZB1LsFs4YyW1eLo5oR1nIBhv_ENvgvkXC30vShGzee_/pubhtml?widget=true&amp;headers=false" width="1175px" height="550px"></iframe>
-//-->
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXLRSYHq2Fqv1ItLRnw1c_nfyP6kQDk3flAZB1LsFs4YyW1eLo5oR1nIBhv_ENvgvkXC30vShGzee_/pubhtml?widget=true&amp;headers=false" width="1175px" height="800px"></iframe>
