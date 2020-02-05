@@ -1272,7 +1272,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## RUN THIS CELL TO PROPERLY HIGHLIGHT THE EXERCISES</span>
@@ -1284,81 +1284,10 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[1]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<style>
-blockquote { background: #AEDE94; }
-h1 { 
-    padding-top: 25px;
-    padding-bottom: 25px;
-    text-align: left; 
-    padding-left: 10px;
-    background-color: #DDDDDD; 
-    color: black;
-}
-h2 { 
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left; 
-    padding-left: 5px;
-    background-color: #EEEEEE; 
-    color: black;
-}
-
-div.exercise {
-	background-color: #ffcccc;
-	border-color: #E9967A; 	
-	border-left: 5px solid #800080; 
-	padding: 0.5em;
-}
-div.discussion {
-	background-color: #ccffcc;
-	border-color: #88E97A;
-	border-left: 5px solid #0A8000; 
-	padding: 0.5em;
-}
-div.theme {
-	background-color: #DDDDDD;
-	border-color: #E9967A; 	
-	border-left: 5px solid #800080; 
-	padding: 0.5em;
-	font-size: 18pt;
-}
-div.gc { 
-	background-color: #AEDE94;
-	border-color: #E9967A; 	 
-	border-left: 5px solid #800080; 
-	padding: 0.5em;
-	font-size: 12pt;
-}
-p.q1 { 
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left; 
-    padding-left: 5px;
-    background-color: #EEEEEE; 
-    color: black;
-}
-header {
-   padding-top: 35px;
-    padding-bottom: 35px;
-    text-align: left; 
-    padding-left: 10px;
-    background-color: #DDDDDD; 
-    color: black;
-}
-</style>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1767,12 +1696,14 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
 <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">25</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="c1"># make a linear spline</span>
-<span class="n">ll</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">linspline</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># sample at these points to plot</span>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">25</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">'*'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">ll</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'linear spline'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'true function'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">linspline</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'linear spline'</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1815,16 +1746,18 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
 <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">25</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="c1"># make the Cubic spline</span>
-<span class="n">yy</span> <span class="o">=</span> <span class="n">CubicSpline</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">cubspline</span> <span class="o">=</span> <span class="n">CubicSpline</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># OR make a linear spline</span>
-<span class="n">ll</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">linspline</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># plot</span>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">25</span><span class="o">*</span><span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'true function'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">'*'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">ll</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'cubic'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">linspline</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">cubspline</span><span class="p">(</span><span class="n">xx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'cubic'</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1866,8 +1799,8 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">splrep</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
+<span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">splrep</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># (tck) is a tuple containing the vector of knots, coefficients, degree of the spline</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
 <span class="c1"># define the points to plot on (x2)</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -1895,7 +1828,9 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># add smooting factor</span>
-<span class="n">task</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># task needs to be set to 0 for the smooting factor</span>
+<span class="n">task</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># task needs to be set to 0, which represents:</span>
+<span class="c1"># we are specifying a smoothing factor and thus only want</span>
+<span class="c1"># splrep() to find the optimal t and c</span>
 
 <span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="n">splrep</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
 
@@ -1959,7 +1894,9 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">yknots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">knots</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">knots</span><span class="p">,</span> <span class="n">yknots</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">curve</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -2104,13 +2041,6 @@ formula='Lottery ~ Literacy + Wealth + C(Region) + Literacy * Wealth'</code></pr
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="discussion"><b>Discussion</b></div><p>Describe the relationship of each predictor with the outcome as seen in the plots above.</p>
 </div>
 </div>
 </div>
