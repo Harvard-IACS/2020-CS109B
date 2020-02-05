@@ -23,7 +23,9 @@ These data files are required for running the clustering notebook
 
 ## YAML File
 This file can be used to create an environment from a basic conda install that will be able to run the notebook.
+
 **This file is not necessary if you have already created a local cs109b conda environment using the YAML file from Lab 1**
+
 - [cs109b.yml](https://canvas.harvard.edu/files/9250778/download?download_frd=1)
 
 ## Zip
