@@ -154,12 +154,11 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 46%                |
-| Individual Homework (2) | 20%               |
+| Paired Homework (6)     | 47%                |
+| Individual Homework (2) | 21%                |
 | Quizzes                 | 8%                 |
 | Ed Exercises            | 4%                 |
 | Project                 | 20%                |
-| Participation           | 2%                 |
 | **Total**               | **100%**           |
 
 **Note:** Regular homework (for everyone) counts as 5 points. 209b extra homework counts as 1 point.
@@ -169,11 +168,10 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 50%                |
-| Individual Homework (2) | 22%                |
+| Paired Homework (6)     | 51%                |
+| Individual Homework (2) | 23%                |
 | Ed Exercises            | 4%                |
 | Project                 | 22%                |
-| Participation           | 2%                 |
 | **Total**               | **100%**           |
 
 </br>
