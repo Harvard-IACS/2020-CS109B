@@ -20,7 +20,7 @@ Topics include big data, multiple deep learning architectures such as CNNs, RNNs
 <br/>
 **Advanced Sections:** Wed 4:30-5:45pm Location TBD (starting 3/4)
 <br/>
-**Office Hours:** TBD
+**Office Hours:** See <a href="pages/calendars.html"> weekly calendar</a> for times and locations
 <br/><br/>
 **Prerequisites:** CS 109a, AC 209a, Stat 121a, or CSCI E-109a or the equivalent.
 <hr>

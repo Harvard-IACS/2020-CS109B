@@ -25,5 +25,7 @@ pre {
 </style>
 + [GitHub Repo](https://github.com/Harvard-IACS/2020-CS109B/tree/master/content "GitHub Repo")
 + [Ed](https://canvas.harvard.edu/courses/65462/modules/items/615702 "Ed")
-+ [Homework Policies & Submission Instructions](https://harvard-iacs.github.io/2020-CS109B/pages/hw.html)
 
+### Guides
++ [Homework Policies & Submission Instructions](https://harvard-iacs.github.io/2020-CS109B/pages/hw.html)
++ [JupyterHub](https://canvas.harvard.edu/courses/65462/pages/instructions-for-using-seas-jupyterhub) (requires Canvas access)

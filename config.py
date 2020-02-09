@@ -14,6 +14,7 @@ MENUITEMS = [
     ('Schedule', 'pages/schedule.html'),
     ('Materials', 'pages/materials.html'),
     #('Videos', 'pages/videos.html'),
+    ('Modules', 'pages/modules.html'),
     #('Projects', 'pages/projects.html'),
     #('FAQ', 'pages/faq.html'),
     ('Resources', 'pages/resources.html')
