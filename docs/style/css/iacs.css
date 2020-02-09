@@ -134,7 +134,7 @@ table thead {
     max-width: 75rem;
 }
 nav div.container, div.container.title, footer div.container,
-.container.syllabus, .container.materials, .container.resources, .container.index,
+.container.syllabus, .container.materials, .container.modules, .container.resources, .container.index,
 .container.category {
     max-width: 50rem;
 }
