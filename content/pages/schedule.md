@@ -1,13 +1,13 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-02-03
+Date: 2020-02-10
 
 
 |Week|Lecture (Mon)|Lecture (Weds)|Lab (Mon)|Advanced Section (Weds)|Assignment (R:Released Weds - D:Due Thurs)|
 |-----|-----|-----|-----|-----|-----|
 |1|[Lecture 1: Introduction + Smoothers and Additive 1/3]({filename}/lectures/lecture01/index.md)|[Lecture 2: Smoothers and Additive 2/3]({filename}/lectures/lecture02/index.md)|[Lab 1: Getting Started]({filename}/labs/lab01/index.md)||HW1 - R: 1/29 D: 2/6|
-|2|[Lecture 3: Smoothers and GAM 3/3 ]({filename}/lectures/lecture03/index.md)|Lecture 4: Unsupervised learning/clustering 1|[Lab 2: Smoothers+GAM ]({filename}/labs/lab02/index.md)||HW2 - R: 2/5 D: 2/20|
-|3|Lecture 5: Unsupervised learning/clustering 2|Lecture 6: Bayesian 1/3|Lab 3: Clustering||No New Assignment|
+|2|[Lecture 3: Smoothers and GAM 3/3 ]({filename}/lectures/lecture03/index.md)|[Lecture 4: Unsupervised learning/clustering 1]({filename}/lectures/lecture04/index.md)|[Lab 2: Smoothers+GAM ]({filename}/labs/lab02/index.md)||HW2 - R: 2/5 D: 2/20|
+|3|[Lecture 5: Unsupervised learning/clustering 2]({filename}/lectures/lecture05/index.md)|Lecture 6: Bayesian 1/3|[Lab 3: Clustering]({filename}/labs/lab03/index.md)||No New Assignment|
 |4|No Lecture (Presidents' Day)|Lecture 7: Bayesian 2/3|No Lab (President's Day)||HW3 - R: 2/19 D: 3/5|
 |5|Lecture 8: Bayesian 3/3|Lecture 9: ML/NN Roadmap|Lab 4: Bayesian||No New Assignment|
 |6|[Lecture 10: CNN-1]({filename}/lectures/lecture10/index.md)|[Lecture 11: CNN-2]({filename}/lectures/lecture11/index.md)|Lab 5: CNNs-1|A-Sec 1: ResNet, Dense-Net, res-Next and Inception and transfer learning|HW4 - R: 3/4 D: 3/12|

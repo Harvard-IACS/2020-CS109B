@@ -1,4 +1,4 @@
-Title: Lecture 2: Introduction + Smoothers and Additive 2/3
+Title: Lecture 2: Smoothers and Additive 2/3
 Category: lectures
 Date: 2020-01-29
 Author: Mark Glickman
