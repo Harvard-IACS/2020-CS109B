@@ -1,6 +1,6 @@
 Title: Lecture 5: Unsupervised Learning - Clustering 2
 Category: lectures
-Date: 2020-02-09
+Date: 2020-02-10
 Author: Mark Glickman
 Slug: lecture05
 Tags:
