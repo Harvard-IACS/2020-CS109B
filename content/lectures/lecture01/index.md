@@ -1,9 +1,9 @@
-Title: Lecture 1: Introduction + Smoothing and Additive 1/3
+Title: Lecture 1: Introduction + Smoothers and Additive 1/3
 Category: lectures
 Date: 2020-01-27
 Author: Mark Glickman
 Slug: lecture01
-Tags: Smoothing, Splines
+Tags: Smoothers, Splines
 
 
 ## Slides

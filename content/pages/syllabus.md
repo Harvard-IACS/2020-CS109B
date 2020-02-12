@@ -16,7 +16,7 @@ CS 109b, AC 209b, Stat 121b, or CSCI E-109b
 **Lectures:** Mon and Wed 1:30‐2:45pm in NW B103<br/>
 **Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)<br/>
 **Advanced Sections:** Wed 4:30-5:45pm Location TBD<br/>
-**Office Hours:** TBD
+**Office Hours:** See <a href="pages/calendars.html"> weekly calendar</a> for times and locations
 
 **Prerequisites:** CS 109a, AC 209a, Stat 121a, or CSCI E-109a or the equivalent.
 
@@ -154,12 +154,11 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 46%                |
-| Individual Homework (2) | 20%               |
+| Paired Homework (6)     | 47%                |
+| Individual Homework (2) | 21%                |
 | Quizzes                 | 8%                 |
 | Ed Exercises            | 4%                 |
 | Project                 | 20%                |
-| Participation           | 2%                 |
 | **Total**               | **100%**           |
 
 **Note:** Regular homework (for everyone) counts as 5 points. 209b extra homework counts as 1 point.
@@ -169,11 +168,10 @@ Your final score for the course will be computed using the following weights:
 
 | Assignment              | Final Grade Weight |
 |-------------------------|--------------------|
-| Paired Homework (6)     | 50%                |
-| Individual Homework (2) | 22%                |
+| Paired Homework (6)     | 51%                |
+| Individual Homework (2) | 23%                |
 | Ed Exercises            | 4%                |
 | Project                 | 22%                |
-| Participation           | 2%                 |
 | **Total**               | **100%**           |
 
 </br>
