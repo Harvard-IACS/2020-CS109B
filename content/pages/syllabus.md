@@ -16,7 +16,7 @@ CS 109b, AC 209b, Stat 121b, or CSCI E-109b
 **Lectures:** Mon and Wed 1:30‐2:45pm in NW B103<br/>
 **Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)<br/>
 **Advanced Sections:** Wed 4:30-5:45pm Location TBD<br/>
-**Office Hours:** TBD
+**Office Hours:** See <a href="pages/calendars.html"> weekly calendar</a> for times and locations
 
 **Prerequisites:** CS 109a, AC 209a, Stat 121a, or CSCI E-109a or the equivalent.
 
