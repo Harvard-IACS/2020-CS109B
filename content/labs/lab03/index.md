@@ -1,10 +1,9 @@
-Title: Lab 03:
+Title: Lab 3: Clustering
 Category: labs
-Date: 2019-11-25
-Author: 
+Date: 2020-02-10
+Author: Chris Tanner
 Slug: lab03
-Tags: ADD TAGS HERE
+Tags: Clustering, KMeans, K-Means, Hierarchical, Agglomerative, Silhouette, Unsupervised
 
-
-## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+## Notebooks
+- [Lab 3: Clustering]({filename}notebook/cs109b_lab03_clustering.ipynb)
