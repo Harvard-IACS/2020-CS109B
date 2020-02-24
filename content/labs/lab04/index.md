@@ -1,10 +1,13 @@
-Title: Lab 04:
+Title: Lab 4: Bayesian Analysis
 Category: labs
-Date: 2019-11-25
-Author: 
+Date: 2020-02-24
+Author: Eleni Kaxiras
 Slug: lab04
-Tags: ADD TAGS HERE
+Tags: Bayesian Analysis, MCMC
 
+## Notebooks
+- [Lab 4: Bayesian Analysis]({filename}notebook/cs109b_lab04_bayes.ipynb)
 
-## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+## Data
+- [dataset_2_test.csv]({static}data/dataset_2_test.csv)
+- [dataset_2_train.csv]({static}data/dataset_2_train.csv)
