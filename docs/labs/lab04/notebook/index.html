@@ -1490,9 +1490,10 @@ P(A|\textbf{B}) = \frac{P(\textbf{B} |A) P(A) }{P(\textbf{B})}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="B.-Bayes-Rule-written-with-Probability-Distributions">B. Bayes Rule written with Probability Distributions<a class="anchor-link" href="#B.-Bayes-Rule-written-with-Probability-Distributions">¶</a></h3><p>We have data that we believe come from an underlying distribution of unknown parameters. If we find those parameters, we know everything about the process that generated this data and we can make inferences (create new data).</p>
-$$
+\begin{equation}
+\label{eq:bayes} 
 P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})} 
-$$
+\end{equation}
 </div>
 </div>
 </div>
@@ -1508,21 +1509,27 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="C.-A-review-of-Common-Probability-Distributions">C. A review of Common Probability Distributions<a class="anchor-link" href="#C.-A-review-of-Common-Probability-Distributions">¶</a></h3><h4 id="Discrete-Distributions">Discrete Distributions<a class="anchor-link" href="#Discrete-Distributions">¶</a></h4><p>The random variable has a <strong>probability mass function (pmf)</strong> which measures the probability that our random variable will take a specific value $y$, denoted $P(Y=y)$.</p>
 <ul>
-<li><strong>Discrete Uniform</strong> </li>
-<li><strong>Bernoulli</strong> (binary outcome, success has probability $p$, $one$ trial)</li>
-<li><strong>Binomial</strong> (binary outcome, success has probability $p$, $n$ trials)
+<li><strong>Bernoulli</strong> (binary outcome, success has probability $\theta$, $one$ trial):
+$
+P(Y=k) =  \theta^k(1-\theta)^{1-k}
+$<hr /></li>
+<li><strong>Binomial</strong> (binary outcome, success has probability $\theta$, $n$ trials):
 \begin{equation}
-P(Y=k) =  {{n}\choose{k}} \cdot p^kq^{n-k}
+P(Y=k) =  {{n}\choose{k}} \cdot \theta^k(1-\theta)^{n-k}
 \end{equation}</li>
-<li><strong>Negative Binomial</strong></li>
-<li><p><strong>Poisson</strong> 
+</ul>
+<p><em>Note</em>: Binomial(1,$p$) = Bernouli($p$)</p>
+<p><hr /></p>
+<ul>
+<li><strong>Negative Binomial</strong><hr /></li>
+<li><strong>Poisson</strong> (counts independent events occurring at a rate)
 \begin{equation}
-P\left( X=k \right) = \frac{{e^{ - \mu } \mu ^k }}{{k!}}
-\end{equation}</p>
-</li>
-<li><p><strong>Categorical, or Multinulli</strong> (random variables can take any of K possible categories, each having its own probability; this is a generalization of the Bernoulli distribution for a discrete variable with more than two possible outcomes, such as the roll of a die)</p>
-</li>
-<li><strong>Dirichlet-multinomial</strong> (ageneralization of the beta distribution for many variables)</li>
+P\left( Y=y|\mu \right) = \frac{{e^{ - \mu } \mu ^y }}{{y!}}
+\end{equation}
+y = 0,1,2,...<hr /></li>
+<li><strong>Discrete Uniform</strong> <hr /></li>
+<li><strong>Categorical, or Multinulli</strong> (random variables can take any of K possible categories, each having its own probability; this is a generalization of the Bernoulli distribution for a discrete variable with more than two possible outcomes, such as the roll of a die)<hr /></li>
+<li><strong>Dirichlet-multinomial</strong> (a generalization of the beta distribution for many variables)</li>
 </ul>
 </div>
 </div>
@@ -1530,13 +1537,13 @@ P\left( X=k \right) = \frac{{e^{ - \mu } \mu ^k }}{{k!}}
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Continuous-Distributions">Continuous Distributions<a class="anchor-link" href="#Continuous-Distributions">¶</a></h4><p>The random variable has a <strong>probability density function (pdf)</strong></p>
+<h4 id="Continuous-Distributions">Continuous Distributions<a class="anchor-link" href="#Continuous-Distributions">¶</a></h4><p>The random variable has a <strong>probability density function (pdf)</strong>.</p>
 <ul>
 <li><strong>Uniform</strong> (variable equally likely to be near each value in interval $(a,b)$)
 \begin{equation}
-p(x) = \frac{1}{b - a}
+P(X = x) = \frac{1}{b - a}
 \end{equation}
-anywhere within the interval $(a, b)$, and zero elsewhere.</li>
+anywhere within the interval $(a, b)$, and zero elsewhere.<hr /></li>
 <li><p><strong>Normal</strong> (a.k.a. Gaussian)
 \begin{equation}
 X \sim  \mathcal{N}(\mu,\,\sigma^{2})
@@ -1548,23 +1555,22 @@ X \sim  \mathcal{N}(\mu,\,\sigma^{2})
 <ul>
 <li>Mean $\mu$</li>
 <li>Variance $\frac{1}{\tau}$ or $\sigma^{2}$</li>
-<li>Parameters: <code>mu: float</code>, <code>sigma: float</code> or <code>tau: float</code></li>
+<li>Parameters: <code>mu: float</code>, <code>sigma: float</code> or <code>tau: float</code><hr /></li>
 </ul>
 </li>
-<li><p><strong>Beta</strong> (variable taking on values in the interval $[0,1]$, and parametrized by two positive parameters, $\alpha$ and $\beta$ that control the shape of the distribution. Beta is a good distribution to use for priors (beliefs) because its range is $[0,1]$ which is the natural range for a probability and because we can model a wide range of functions by changing the $\alpha$ and $\beta$ parameters.</p>
-</li>
+<li><strong>Beta</strong> (variable ($\theta$) taking on values in the interval $[0,1]$, and parametrized by two positive parameters, $\alpha$ and $\beta$ that control the shape of the distribution. </li>
 </ul>
+<p><em>Note:</em>Beta is a good distribution to use for priors (beliefs) because its range is $[0,1]$ which is the natural range for a probability and because we can model a wide range of functions by changing the $\alpha$ and $\beta$ parameters.</p>
 \begin{equation}
 \label{eq:beta} 
-P(\theta) = \frac{1}{B(\alpha, \beta)} {\theta}^{\alpha - 1} (1 - \theta)^{\beta - 1} 
+P(\theta) = \frac{1}{B(\alpha, \beta)} {\theta}^{\alpha - 1} (1 - \theta)^{\beta - 1} \propto {\theta}^{\alpha - 1} (1 - \theta)^{\beta - 1}
 \end{equation}<p>where the normalisation constant, $B$, is a beta function of $\alpha$ and $\beta$,</p>
 \begin{equation}
 B(\alpha, \beta) = \int_{t=0}^1 t^{\alpha - 1} (1 - t)^{\beta - 1} dt.
-\end{equation}<ul>
-<li><p><strong>Exponential</strong></p>
-</li>
-<li><p><strong>Gamma</strong></p>
-</li>
+\end{equation}<p><hr /></p>
+<ul>
+<li><strong>Exponential</strong><hr /></li>
+<li><strong>Gamma</strong></li>
 </ul>
 </div>
 </div>
@@ -1614,7 +1620,7 @@ P\left( X=k \right) = \frac{{e^{ - \mu } \mu ^k }}{{k!}}
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># binomial</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># same for binomial</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-darkgrid'</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
 <span class="n">ns</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
@@ -1624,6 +1630,28 @@ P\left( X=k \right) = \frac{{e^{ - \mu } \mu ^k }}{{k!}}
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pmf</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n = </span><span class="si">{}</span><span class="s1">, p = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'f(x)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># discrete uniform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-darkgrid'</span><span class="p">)</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">us</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># watch out, this number can only be integer!</span>
+<span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="n">us</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pmf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pmf</span><span class="p">,</span> <span class="s1">'-o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'lower = </span><span class="si">{}</span><span class="s1">, upper = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'probability P(x)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1756,9 +1784,10 @@ You begin by flipping the coin. You get either Heads ($H$) or Tails ($T$) as our
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will be using Bayes rule. $\textbf{D}$ is our data.</p>
-$$
+\begin{equation}
+\label{eq:bayes} 
 P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})} 
-$$
+\end{equation}
 </div>
 </div>
 </div>
@@ -1898,14 +1927,15 @@ $$
     <span class="n">switchpoint</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">DiscreteUniform</span><span class="p">(</span><span class="s1">'switchpoint'</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">years</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">upper</span><span class="o">=</span><span class="n">years</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">testval</span><span class="o">=</span><span class="mi">1900</span><span class="p">)</span>
 
     <span class="c1"># Priors for pre- and post-switch rates number of disasters</span>
-    <span class="c1"># expected number of disasters </span>
     <span class="n">early_rate</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="s1">'early_rate'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">late_rate</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="s1">'late_rate'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="c1"># Allocate appropriate Poisson rates to years before and after current</span>
+    <span class="c1"># our theta - allocate appropriate Poisson rates to years before and after current</span>
+    <span class="c1"># switch is an `if` statement in puMC3</span>
     <span class="n">rate</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">switchpoint</span> <span class="o">>=</span> <span class="n">years</span><span class="p">,</span> <span class="n">early_rate</span><span class="p">,</span> <span class="n">late_rate</span><span class="p">)</span>
 
-    <span class="c1"># data likelihood</span>
+    <span class="c1"># our observed data as a likelihood function of the `rate` parameters</span>
+    <span class="c1"># shows how we think our data is distributed</span>
     <span class="n">disasters</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Poisson</span><span class="p">(</span><span class="s1">'disasters'</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">disaster_data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2005,6 +2035,7 @@ Y \sim  \mathcal{N}(\mu,\,\sigma^{2})
 \beta_i \sim  \mathcal{N}(0,\,10) \\
 \sigma \sim  |\mathcal{N}(0,\,10)|
 \end{eqnarray}<p></p>
+<p>We will artificially create the data to predict on. We will then see if our model predicts them correctly.</p>
 </div>
 </div>
 </div>
@@ -2134,7 +2165,7 @@ Y \sim  \mathcal{N}(\mu,\,\sigma^{2})
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This linear regression example was from <em>Salvatier J, Wiecki TV, Fonnesbeck C. 2016. Probabilistic programming in Python using PyMC3. PeerJ Computer Science 2:e55 <a href="https://doi.org/10.7717/peerj-cs.55">https://doi.org/10.7717/peerj-cs.55</a></em></p>
+<p>This linear regression example is from the original paper on PyMC3: <em>Salvatier J, Wiecki TV, Fonnesbeck C. 2016. Probabilistic programming in Python using PyMC3. PeerJ Computer Science 2:e55 <a href="https://doi.org/10.7717/peerj-cs.55">https://doi.org/10.7717/peerj-cs.55</a></em></p>
 </div>
 </div>
 </div>
