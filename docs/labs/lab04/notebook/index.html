@@ -1362,6 +1362,7 @@ header {
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">summary</span>
 </pre></div>
 </div>
 </div>
@@ -1414,6 +1415,7 @@ header {
 <p><a id="top"></a></p>
 <h2 id="Learning-Objectives">Learning Objectives<a class="anchor-link" href="#Learning-Objectives">¶</a></h2><p>By the end of this lab, you should be able to:</p>
 <ul>
+<li>Understand how probability distributions work.</li>
 <li>Apply Bayes Rule in calculating probabilities.</li>
 <li>Understand how to apply Bayesian analysis using PyMC3</li>
 <li>Avoid getting fired when talking to your Bayesian employer.</li>
@@ -1429,6 +1431,7 @@ header {
 <li>The Bayesian Way of Thinking or Is this a Fair Coin?</li>
 <li><a href="#pymc3">Intro to <code>pyMC3</code></a>. </li>
 <li><a href="#blr">Bayesian Linear Regression</a>.</li>
+<li><a href="#no4">Try this at Home: Example on Mining Disasters</a>.</li>
 </ol>
 </div>
 </div>
@@ -1467,7 +1470,7 @@ P(A|\textbf{B}) = \frac{P(\textbf{B} |A) P(A) }{P(\textbf{B})}
 <p><br /></p>
 <div class="exercise" style="background-color:#b3e6ff"><b>Table Exercise</b>: Solve the Monty Hall Paradox using Bayes Rule.</div><p><img alt="montyhall" src="../images/montyhall.jpeg" /></p>
 <p>You are invited to play a game. There are 3 doors behind <strong>one</strong> of which are the keys to a brand new red Tesla. There is a goat behind each of the other two.</p>
-<p>You are asked to pick one door, and let's say you pick <strong>Door1</strong>. The host, who knows where the keys are, then says "I will do you a favor and open <strong>Door2</strong>". So he opens Door2 inside which there is, of course, a goat. He now asks you, do you want to open the initial Door you chose or change to <strong>Door3</strong>? What do you do?</p>
+<p>You are asked to pick one door, and let's say you pick <strong>Door1</strong>. The host knows where the keys are. Of the two remaining closed doors, he will always open the door that has a goat behind it. He'll say "I will do you a favor and open <strong>Door2</strong>". So he opens Door2 inside which there is, of course, a goat. He now asks you, do you want to open the initial Door you chose or change to <strong>Door3</strong>? Generally, in this game, when you are presented with this choice should you swap the doors?</p>
 <p><strong>Initial Steps:</strong></p>
 <ul>
 <li><p>Start by defining the <code>events</code> of this probabilities game. One definition is:</p>
@@ -1500,7 +1503,7 @@ P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})}
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="But-what-is-$\theta-\;$?">But what is $\theta \;$?<a class="anchor-link" href="#But-what-is-$\theta-\;$?">¶</a></h4><p>$\theta$ is an unknown yet fixed parameter. In Bayesian inference we express our belief about what $\theta$ might be and instead of trying to guess $\theta$ exactly, we look for its <strong>probability distribution</strong>. What that means is that we are looking for the <strong>parameters</strong> of that distribution. For example, for a Poisson distribution we need to find the parameter $\lambda$. You will see $\theta$ with many names, e.g. $\mu$ for the normal distribution.</p>
+<h4 id="But-what-is-$\theta-\;$?">But what is $\theta \;$?<a class="anchor-link" href="#But-what-is-$\theta-\;$?">¶</a></h4><p>$\theta$ is an unknown yet fixed set of parameters. In Bayesian inference we express our belief about what $\theta$ might be and instead of trying to guess $\theta$ exactly, we look for its <strong>probability distribution</strong>. What that means is that we are looking for the <strong>parameters</strong> of that distribution. For example, for a Poisson distribution our $\theta$ is only $\lambda$. In a normal distribution, our $\theta$ is often just $\mu$ and $\sigma$.</p>
 </div>
 </div>
 </div>
@@ -1524,7 +1527,7 @@ P(Y=k) =  {{n}\choose{k}} \cdot \theta^k(1-\theta)^{n-k}
 <li><strong>Negative Binomial</strong><hr /></li>
 <li><strong>Poisson</strong> (counts independent events occurring at a rate)
 \begin{equation}
-P\left( Y=y|\mu \right) = \frac{{e^{ - \mu } \mu ^y }}{{y!}}
+P\left( Y=y|\lambda \right) = \frac{{e^{ - \lambda } \lambda ^y }}{{y!}}
 \end{equation}
 y = 0,1,2,...<hr /></li>
 <li><strong>Discrete Uniform</strong> <hr /></li>
@@ -1687,8 +1690,9 @@ Our $\theta$ is basically the combination of the parameters a,b. We can also cal
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">uniform</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">uniform</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">'rice'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'uniform pdf'</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">uniform</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">uniform</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'uniform pdf'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">'stepfilled'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'probability density'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">f</span><span class="s1">'random variable'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1791,23 +1795,36 @@ P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})}
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the case of a coin toss when we observe $k$ heads in $n$ tosses:
+\begin{equation}
+\label{eq:bayes} 
+P(\theta|\textbf{k}) = Beta(\alpha + \textbf{k}, \beta + n - \textbf{k}) 
+\end{equation}</p>
+<p>we can say that $\alpha$ and $\beta$ play the roles of a "prior number of heads" and "prior number of tails".</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># play with the prior</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># play with the priors - here we manually set them but we could be sampling from a separate Beta</span>
 <span class="n">trials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">])</span>
 <span class="n">heads</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">150</span><span class="p">])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
+<span class="c1"># for simplicity we set a,b=1</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">N</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
     <span class="n">sx</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">prior</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">heads</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">trials</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">heads</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> 
-    <span class="c1">#plt.ylim(0,2.)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">f</span><span class="s1">'</span><span class="si">{trials[k]}</span><span class="s1"> tosses</span><span class="se">\n</span><span class="s1"> </span><span class="si">{heads[k]}</span><span class="s1"> heads'</span><span class="p">);</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#348ABD"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> 
+    <span class="n">posterior</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">heads</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">trials</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">heads</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">posterior</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">f</span><span class="s1">'</span><span class="si">{trials[k]}</span><span class="s1"> tosses</span><span class="se">\n</span><span class="s1"> </span><span class="si">{heads[k]}</span><span class="s1"> heads'</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">posterior</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#348ABD"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> 
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1872,7 +1889,156 @@ P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})}
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example:-Mining-Disasters">Example: Mining Disasters<a class="anchor-link" href="#Example:-Mining-Disasters">¶</a></h3><p>We will go over the classical <code>mining disasters from 1851 to 1962</code> dataset.</p>
+<p><a id="blr"></a> <a href="#top">Top</a></p>
+<h2 id="3.-Bayesian-Linear-Regression">3. Bayesian Linear Regression<a class="anchor-link" href="#3.-Bayesian-Linear-Regression">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's say we want to predict outcomes Y as normally distributed observations with an expected value $mu$ that is a linear function of two predictor variables, $\bf{x}_1$ and $\bf{x}_2$.</p>
+\begin{equation}
+\mu = \alpha + \beta_1 \bf{x}_1 + \beta_2 x_2 
+\end{equation}\begin{equation}
+Y \sim  \mathcal{N}(\mu,\,\sigma^{2})
+\end{equation}<p></p>
+<p>where $\sigma^2$ represents the measurement error.</p>
+<p>In this example, we will use $\sigma^2 = 10$</p>
+<p>We also choose the parameters as normal distributions:</p>
+\begin{eqnarray}
+\alpha \sim  \mathcal{N}(0,\,10) \\
+\beta_i \sim  \mathcal{N}(0,\,10) \\
+\sigma^2 \sim  |\mathcal{N}(0,\,10)|
+\end{eqnarray}<p></p>
+<p>We will artificially create the data to predict on. We will then see if our model predicts them correctly.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize random number generator</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># True parameter values</span>
+<span class="n">alpha</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+
+<span class="c1"># Size of dataset</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Predictor variable</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># Simulate outcome variable</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">X1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">X2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X2</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x_1$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$Y$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x_2$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$Y$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Normal</span><span class="p">,</span> <span class="n">HalfNormal</span>
+
+<span class="n">basic_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">basic_model</span><span class="p">:</span>
+
+    <span class="c1"># Priors for unknown model parameters, specifically create stochastic random variables </span>
+    <span class="c1"># with Normal prior distributions for the regression coefficients,</span>
+    <span class="c1"># and a half-normal distribution for the standard deviation of the observations, σ.</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'beta'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">HalfNormal</span><span class="p">(</span><span class="s1">'sigma'</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Expected value of outcome - posterior</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">X1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">X2</span>
+
+    <span class="c1"># Likelihood (sampling distribution) of observations</span>
+    <span class="n">Y_obs</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'Y_obs'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># model fitting with sampling</span>
+<span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">NUTS</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">find_MAP</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">optimize</span>
+
+<span class="k">with</span> <span class="n">basic_model</span><span class="p">:</span>
+
+    <span class="c1"># obtain starting values via MAP</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">find_MAP</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="n">optimize</span><span class="o">.</span><span class="n">fmin_powell</span><span class="p">)</span>
+
+    <span class="c1"># instantiate sampler</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">NUTS</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
+
+    <span class="c1"># draw 2000 posterior samples</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">traceplot</span>
+
+<span class="n">traceplot</span><span class="p">(</span><span class="n">trace</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> 
+                     <span class="n">var_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'alpha'</span><span class="p">,</span> <span class="s1">'beta'</span><span class="p">,</span> <span class="s1">'sigma'</span><span class="p">])</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This linear regression example is from the original paper on PyMC3: <em>Salvatier J, Wiecki TV, Fonnesbeck C. 2016. Probabilistic programming in Python using PyMC3. PeerJ Computer Science 2:e55 <a href="https://doi.org/10.7717/peerj-cs.55">https://doi.org/10.7717/peerj-cs.55</a></em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="no4"></a> <a href="#top">Top</a></p>
+<h2 id="4.-Try-this-at-Home:-Example-on-Mining-Disasters">4. Try this at Home: Example on Mining Disasters<a class="anchor-link" href="#4.-Try-this-at-Home:-Example-on-Mining-Disasters">¶</a></h2><p>We will go over the classical <code>mining disasters from 1851 to 1962</code> dataset.</p>
 <p>This example is from the <a href="https://docs.pymc.io/notebooks/getting_started.html">pyMC3 Docs</a>.</p>
 </div>
 </div>
@@ -2007,165 +2173,6 @@ P(\theta|\textbf{D}) = \frac{P(\textbf{D} |\theta) P(\theta) }{P(\textbf{D})}
 <span class="n">results</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="blr"></a> <a href="#top">Top</a></p>
-<h2 id="3.-Bayesian-Linear-Regression">3. Bayesian Linear Regression<a class="anchor-link" href="#3.-Bayesian-Linear-Regression">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's say we want to predict outcomes Y as normally distributed observations with an expected value $mu$ that is a linear function of two predictor variables, $\bf{x}_1$ and $\bf{x}_2$.</p>
-\begin{equation}
-\mu = \alpha + \beta_1 \bf{x}_1 + \beta_2 x_2 
-\end{equation}\begin{equation}
-Y \sim  \mathcal{N}(\mu,\,\sigma^{2})
-\end{equation}<p></p>
-<p>where $\sigma^2$ represents the measurement error.</p>
-<p>In this example, we will use $\sigma^2 = 10$</p>
-<p>We also choose the parameters as normal distributions:</p>
-\begin{eqnarray}
-\alpha \sim  \mathcal{N}(0,\,10) \\
-\beta_i \sim  \mathcal{N}(0,\,10) \\
-\sigma \sim  |\mathcal{N}(0,\,10)|
-\end{eqnarray}<p></p>
-<p>We will artificially create the data to predict on. We will then see if our model predicts them correctly.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize random number generator</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-
-<span class="c1"># True parameter values</span>
-<span class="n">alpha</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
-
-<span class="c1"># Size of dataset</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="c1"># Predictor variable</span>
-<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-
-<span class="c1"># Simulate outcome variable</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">X1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">X2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X2</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x_1$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span> 
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$Y$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x_2$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span> 
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$Y$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Normal</span><span class="p">,</span> <span class="n">HalfNormal</span>
-
-<span class="n">basic_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
-
-<span class="k">with</span> <span class="n">basic_model</span><span class="p">:</span>
-
-    <span class="c1"># Priors for unknown model parameters, specifically create stochastic random variables </span>
-    <span class="c1"># with Normal prior distributions for the regression coefficients,</span>
-    <span class="c1"># and a half-normal distribution for the standard deviation of the observations, σ.</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">beta</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'beta'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sigma</span> <span class="o">=</span> <span class="n">HalfNormal</span><span class="p">(</span><span class="s1">'sigma'</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># Expected value of outcome</span>
-    <span class="n">mu</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">X1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">X2</span>
-
-    <span class="c1"># Likelihood (sampling distribution) of observations</span>
-    <span class="n">Y_obs</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="s1">'Y_obs'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># model fitting with sampling</span>
-<span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">NUTS</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">find_MAP</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">optimize</span>
-
-<span class="k">with</span> <span class="n">basic_model</span><span class="p">:</span>
-
-    <span class="c1"># obtain starting values via MAP</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">find_MAP</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="n">optimize</span><span class="o">.</span><span class="n">fmin_powell</span><span class="p">)</span>
-
-    <span class="c1"># instantiate sampler</span>
-    <span class="n">step</span> <span class="o">=</span> <span class="n">NUTS</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
-
-    <span class="c1"># draw 2000 posterior samples</span>
-    <span class="n">trace</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">traceplot</span>
-
-<span class="n">traceplot</span><span class="p">(</span><span class="n">trace</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pymc3</span> <span class="k">import</span> <span class="n">summary</span>
-
-<span class="n">summary</span><span class="p">(</span><span class="n">trace</span><span class="p">[</span><span class="s1">'alpha'</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">summary</span><span class="p">(</span><span class="n">trace</span><span class="p">[</span><span class="s1">'beta'</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This linear regression example is from the original paper on PyMC3: <em>Salvatier J, Wiecki TV, Fonnesbeck C. 2016. Probabilistic programming in Python using PyMC3. PeerJ Computer Science 2:e55 <a href="https://doi.org/10.7717/peerj-cs.55">https://doi.org/10.7717/peerj-cs.55</a></em></p>
 </div>
 </div>
 </div>
