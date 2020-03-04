@@ -8,4 +8,4 @@ Tags: Neural Networks, CNNs, Convolution
 
 ## Slides
 
-- [Lecture 10 Slides [PPTX]](presentation/cs109b_lecturee11_CNN2.pptx)
+- [Lecture 11 Slides [PPTX]](presentation/cs109b_lecture11_CNN2.pptx)
