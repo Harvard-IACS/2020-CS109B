@@ -9,3 +9,4 @@ Tags: Neural Networks, CNNs, MPL
 ## Slides
 
 - [Lecture 10 Slides [PPTX]](presentation/cs109b_lecture10_CNN1.pptx)
+- [Lecture 10 Slides [PDF]](presentation/cs109b_lecture10_CNN1.pdf)
