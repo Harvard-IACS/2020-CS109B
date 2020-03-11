@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-03-09
+Date: 2020-03-11
 
 
 |Week|Lecture (Mon)|Lecture (Weds)|Lab (Mon)|Advanced Section (Weds)|Assignment (R:Released Weds - D:Due Thurs)|
