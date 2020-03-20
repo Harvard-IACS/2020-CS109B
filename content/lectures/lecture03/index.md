@@ -1,4 +1,4 @@
-Title: Lecture 3: Introduction + Smoothers and Additive 3/3
+Title: Lecture 3: Smoothers and Additive 3/3
 Category: lectures
 Date: 2020-02-03
 Author: Mark Glickman
