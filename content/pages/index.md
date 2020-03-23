@@ -1,6 +1,6 @@
 Title: CS109b: Advanced Topics in Data Science
 Slug: index
-Date: 2019-11-25
+Date: 2020-02-20
 save_as: index.html
 
 Spring 2020 <br/>
@@ -18,7 +18,7 @@ Topics include big data, multiple deep learning architectures such as CNNs, RNNs
 <br/>
 **Labs:** Monday 4:30-5:45pm & 6:00-7:15pm in Pierce Hall 301 (identical material at both times)
 <br/>
-**Advanced Sections:** Wed 4:30-5:45pm Location TBD (starting 3/4)
+**Advanced Sections:** Wed 4:30-5:45pm in Maxwell-Dworkin G115 (starting 3/4)
 <br/>
 **Office Hours:** See <a href="pages/calendars.html"> weekly calendar</a> for times and locations
 <br/><br/>

@@ -23,6 +23,7 @@ pre {
     height: 300px;
 }
 </style>
++ [FAQ](https://harvard-iacs.github.io/2020-CS109B/pages/faq.html)
 + [GitHub Repo](https://github.com/Harvard-IACS/2020-CS109B/tree/master/content "GitHub Repo")
 + [Ed](https://canvas.harvard.edu/courses/65462/modules/items/615702 "Ed")
 
