@@ -1,4 +1,4 @@
-Title: Advanced Sections 01: Transfer Learning
+Title: A-Sec 1: ResNet, Dense-Net, res-Next and Inception and transfer learning
 Category: a-sections
 Date: 2020-03-04
 Author: Marios Matthaiakis

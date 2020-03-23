@@ -1,11 +1,10 @@
-Title: Lecture 13: More Autoencoders & RNNs
+Title: Lecture 13:
 Category: lectures
-Date: 2020-03-11
-Author: Pavlos Protopapas
+Date: 2019-11-25
+Author: 
 Slug: lecture13
-Tags: Autoencoders, Latent Space, RNNs
+Tags: ADD TAGS HERE
 
 
 ## Slides
-
-- [Lecture 13 Slides [PPTX]](presentation/cs109b_lecture13_RNN.pptx)
+<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
