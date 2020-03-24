@@ -5,7 +5,7 @@ Week,Lecture (Mon),Lecture (Weds),Lab (Mon),Advanced Section (Weds),Assignment (
 4,No Lecture (Presidents' Day),Lecture 7: Bayesian 2/3,No Lab (President's Day),,HW3 - R: 2/19 D: 3/5
 5,Lecture 8: Bayesian 3/3,Lecture 9: ML/NN Roadmap,Lab 4: Bayesian,,No New Assignment
 6,Lecture 10: CNN-1,Lecture 11: CNN-2,Lab 5: CNNs-1,"A-Sec 1: ResNet, Dense-Net, res-Next and Inception and transfer learning",HW4 - R: 3/4 D: 3/12
-7,Lecture 12: Autoencoders + Unet,Lecture 13: RNN1,Lab 6: CNNs -2,"A-Sec 2: Segmentation Techniques, YOLO, Unet and M-RCNN",HW5 - R: 3/11 D: 3/26
+7,Lecture 12: Autoencoders + Unet,Lecture 13: RNN1,Lab 6: CNNs-2,"A-Sec 2: Segmentation Techniques, YOLO, Unet and M-RCNN",HW5 - R: 3/11 D: 3/26
 8,No Lecture (Spring Break),No Lecture ,No Lab ,No A-Sec ,No New Assignment
 9,Lecture 14: RNN2 + Text1,Lecture 15: Text2,Lab 7: AE ,"A-Sec 3: RNN, echo state ",HW6 - R: 3/25 D: 4/9
 10,Lecture 16: Text3,Lecture 17: VAE + Generative models,Lab 8: RNNS ,A-Sec 4: Variational Inference,No New Assignment

@@ -1,0 +1,5 @@
+Google Colab Advanced Section notebook:
+Example of using transfer learning in a semantic segmentation U-Net.
+
+Link: 
+https://colab.research.google.com/drive/16yPQcq9ld3wTDe5MeJ94TJcv3zek__qI
