@@ -1,9 +1,10 @@
-Title: Lab 05:
+Title: Lab 5: CNNs-1
 Category: labs
-Date: 2021-01-24
-Author: 
+Date: 2020-03-02
+Author: Eleni Kaxiras
 Slug: lab05
-Tags:
+Tags: CNNs
 
 
-## Slides
+## Notebook
+[Lab5]({filename}notebook/cs109b_lab5_CNN_2020.ipynb)
