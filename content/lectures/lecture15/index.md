@@ -1,6 +1,6 @@
 Title: Lecture 15: Text 2
 Category: lectures
-Date: 2020-03-30
+Date: 2020-03-25
 Author: Pavlos Protopapas
 Slug: lecture15
 Tags:
