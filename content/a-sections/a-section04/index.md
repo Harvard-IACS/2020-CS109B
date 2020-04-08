@@ -8,3 +8,4 @@ Tags: Variational Inference
 
 ## Slides
 - [A-Sec 4: Variational Inference [PPTX]](presentation/Inference_AdvancedSection.pptx)
+- [A-Sec 4: Variational Inference [PDF]](presentation/Inference_AdvancedSection.pdf)
