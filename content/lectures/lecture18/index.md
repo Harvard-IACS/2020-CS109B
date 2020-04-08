@@ -8,5 +8,4 @@ Tags: Variational Autoencoders, Generative Models, GANs
 
 ## Slides
 
-- [Lecture 18 Slides [PPTX]](presentation/cs109b_VAE.pptx)
 - [Lecture 18 Slides [PDF]](presentation/cs109b_VAE.pdf)
