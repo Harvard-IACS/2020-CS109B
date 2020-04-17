@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-04-15
+Date: 2020-04-16
 
 
 |Week|Lecture (Mon)|Lecture (Weds)|Lab (Mon)|Advanced Section (Weds)|Assignment (R:Released Weds - D:Due Thurs)||
