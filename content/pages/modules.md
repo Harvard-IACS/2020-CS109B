@@ -27,6 +27,8 @@ ol {
 }
 </style>
 
+[Final Project Guidelines](https://docs.google.com/document/d/1Zhmm9JP4FGQBi5abFiM22e5iXYo_rr7i_vbpW0-xt8A/edit)
+
 1. ### Predicting Fine Particulate Matter Pollution
 
 	We introduce the data setting and provide a high-level overview of the most important data science methods for estimating the health risks of air pollution and climate change related exposures. Given the strong evidence that the presence of fine particulate matter in the atmosphere increases mortality and hospitalization rates, it is important that we can track and predict these pollution levels.
