@@ -1,4 +1,4 @@
-Title: A-Sec 3: RNN, Echo State
+Title: Advanced Section 3: RNN, Echo State
 Category: a-sections
 Date: 2020-03-25
 Author: Marios Matthaiakis

@@ -1,15 +1,12 @@
-Title: Lab 6: Recurrent Neural Networks
+Title: Lab 8: Recurrent Neural Networks
 Category: labs
-Date: 2019-3-07
-Slug: lab6
-Author:  Srivatsan Srinivasan
-Tags: keras, RNN, LSTM
+Date: 2020-3-20
+Slug: lab08
+Author:  Srivatsan Srinivasan & Chris Tanner
+Tags: keras, RNN, LSTM, OpenAIgym
 
 
 
 ### Notebooks
- - [Lab6 RNNs]({filename}cs109b-lab6-rnn.ipynb)
- - [Lab6 RNNs with solutions]({filename}cs109b-lab6-rnn-solutions.ipynb)
+ - [Lab8 RNNs with solutions]({filename}notebook/cs109b-lab08-rnn-solutions.ipynb)
 
-### Installation Instructions
- - [OpenAIgym]({attach}installation.md)

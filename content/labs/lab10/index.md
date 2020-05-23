@@ -1,9 +1,10 @@
-Title: Lab 10:
+Title: Lab 10: VAEs and GANs
 Category: labs
-Date: 2021-01-24
-Author: 
+Date: 2020-04-13
+Author: Srivatsan Srinivasan, Pavlos Protopapas, Chris Tanner, and Rashmi B
 Slug: lab10
-Tags:
+Tags: autoencoders, AE, variational autoencoders, VAE, GANs, generative adversarial networks
 
 
-## Slides
+## Notebook
+[Lab10 VAEs + GANs]({filename}notebook/cs109b_lab10_ct.ipynb)

@@ -1,4 +1,4 @@
-Title: A-Sec 2: Segmentation Techniques, YOLO, Unet and M-RCNN
+Title: Advanced Section 2: Segmentation Techniques, YOLO, Unet and M-RCNN
 Category: a-sections
 Date: 2020-03-11
 Author: Robbert Struyven

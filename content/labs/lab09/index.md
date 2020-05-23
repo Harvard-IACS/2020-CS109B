@@ -1,10 +1,10 @@
-Title: Lab 09:
+Title: Lab 9: RNNs 2
 Category: labs
-Date: 2019-11-25
-Author: 
+Date: 2020-04-06
+Author: Srivatsan Srinivasan & Chris Tanner
 Slug: lab09
-Tags: ADD TAGS HERE
+Tags: RNN, LSTM, GRU, Keras
 
 
-## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+## Notebook
+[Lab9 Text]({filename}notebook/cs109b-lab09-sequences-solutions.ipynb)

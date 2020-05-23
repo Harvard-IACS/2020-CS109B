@@ -1,4 +1,4 @@
-Title: A-Sec 4: Variational Inference
+Title: Advanced Section 4: Variational Inference
 Category: a-sections
 Date: 2020-04-08
 Author: Pavlos Protopapas
